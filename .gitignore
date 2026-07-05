@@ -1,0 +1,3 @@
+examples/ACDC_fieldmap/*.npz
+__pycache__/
+*.egg-info/
