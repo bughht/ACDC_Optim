@@ -41,12 +41,8 @@ print(f"NRMSE = {nrmse:.4f}")
 For a single time frame, find coil currents $\mathbf{x}\in\mathbb{R}^{N_c}$ that
 best cancel a measured fieldmap $\mathbf{d}\in\mathbb{R}^{M}$:
 
-$$
-\min_{\mathbf{x}}\ \frac{1}{2}\|\mathbf{W}^T\mathbf{x} - \mathbf{d}\|_2^2
-+ \frac{\lambda}{2}\|\mathbf{x}\|_2^2
-\quad\text{s.t.}\quad
-|x_c|\le I_{\max},\ \ \sum_c|x_c|\le I_{\Sigma,\max}
-$$
+$
+\min_{\mathbf{x}}\ \frac{1}{2}\|\mathbf{W}^T\mathbf{x} - \mathbf{d}\|_2^2 + \frac{\lambda}{2}\|\mathbf{x}\|_2^2 \quad\text{s.t.}\quad |x_c|\le I_{\max},\ \ \sum_c|x_c|\le I_{\Sigma,\max}$
 
 where $\mathbf{W}\in\mathbb{R}^{N_c\times M}$ is the ACDC coil sensitivity matrix.
 Solved exactly via Quadratic Programming.
@@ -56,12 +52,7 @@ Solved exactly via Quadratic Programming.
 For time‑varying fields $\mathbf{B}\in\mathbb{R}^{T\times M}$ with an amplifier
 system impulse response convolution operator $\mathbf{C}\in\mathbb{R}^{T\times T}$ (SIRF):
 
-$$
-\min_{\mathbf{X}}\ \frac{1}{2}\|\mathbf{C}\mathbf{X}\mathbf{W}
-- \mathbf{B}\|_F^2 + \frac{\lambda}{2}\|\mathbf{X}\|_F^2
-\quad\text{s.t.}\quad
-|X_{t,c}|\le I_{\max},\ \ \sum_c|X_{t,c}|\le I_{\Sigma,\max}\ \forall t
-$$
+$ \min_{\mathbf{X}}\ \frac{1}{2}\|\mathbf{C}\mathbf{X}\mathbf{W} - \mathbf{B}\|_F^2 + \frac{\lambda}{2}\|\mathbf{X}\|_F^2 \quad\text{s.t.}\quad |X_{t,c}|\le I_{\max},\ \ \sum_c|X_{t,c}|\le I_{\Sigma,\max}\ \forall t $
 
 Solved via FISTA (Nesterov‑accelerated projected gradient) with FFT‑based
 convolution for the SIRF terms.
