@@ -1,6 +1,6 @@
-# ACDC Optim: A Unified Optimization Framework for  Multi-channel Dynamic $\bf{B_0}$ Field Control
+# ACDC Optim: A Unified Optimization Framework for  Multi-channel Dynamic B₀ Field Control
 
-A unified optimization framework for **multi‑channel, dynamic $\bf{B_0}$ field control**
+A unified optimization framework for **multi‑channel, dynamic B₀ field control**
 in MRI.  Supports both static and dynamic (time‑resolved) shimming with the
 AC/DC array coil and Rev.D waveform generator & power amplifier system.
 
